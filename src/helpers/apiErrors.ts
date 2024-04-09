@@ -9,6 +9,8 @@ export class ApiError extends Error {
 
 export class BadRequestError extends ApiError {
     constructor(message: string) {
-        super(message, 404)
+        super(message, 400)
     }
 }
+
+

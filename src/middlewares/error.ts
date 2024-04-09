@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import { ApiError } from '../helpers/apiErrors'
+import { ApiError, BadRequestError } from '../helpers/apiErrors'
 
 export const errorMiddleware = (
     error: Error & Partial<ApiError>,
@@ -11,3 +11,4 @@ export const errorMiddleware = (
     const message = error.statusCode ? error.message : 'Internal Server Error'
     return res.status(statusCode).json({ message })
 }
+
